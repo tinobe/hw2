@@ -6,4 +6,4 @@ script:
   - make
 
 after_success:
-  - ./fibonacci
+  - ./logmap > d
