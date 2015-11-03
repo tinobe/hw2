@@ -1,0 +1,9 @@
+language: cpp
+
+sudo: false
+
+script:
+  - make
+
+after_success:
+  - ./fibonacci
