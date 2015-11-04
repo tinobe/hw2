@@ -16,6 +16,9 @@ using namespace std;
 int main(void)
 {
  int a,b;
+  
+ // open file output.dat in order to write into it,
+ // if the file already exists it will be overwritten
  ofstream out("output.dat");
 
  // Read input from console
@@ -34,23 +37,19 @@ int main(void)
 The formatting command ``\t`` prints
 a tabulator in the respective position. After executing this program
 a new file ``output.dat`` has been generated which contains all the things
-you stuffed into ``out`` using the ``<<`` operator.
+you stuffed into ``out`` using the ``<<`` operator. The final command
+``out.close()`` closes the file. 
 
 ### Your assignment is:
 
 Modify the program ***logmap.cxx*** (which is the solution to the problem to Lab 2) in the following way:
-* Instead of iterating and printing the results at the same time, modify your code such that first the iteration is done and then the output into 
-  *x_1*, ..., *x_n* for a given value of *r*.
-  As input parameters, the function should be given
-	an array into which the values are stored, the length
-	of the array and the value of *r*.
-* Add a function which prints the contents of an array
-  it is given to a file. This function needs to be passed
-  the array itself, the length of the array and the value of
-  *r*. The output should have the same layout as in the
-  original problem.
-* Restructure your original program to use these two new
-  functions.    
-
-For the implementations of these functions, split *declaration*
-from *definition*.
+* Instead of iterating and printing the results (to the console) at the same time,
+  modify your code such that first all calculations are done and only subsequently
+  the results are written to the file.
+* To keep things simple, you just have to store iteration results for one *r*
+  value at a time. In the current program we carry out *Nskip* steps before we print
+  values, i.e. you will need *Nend - Nskip* entries in your array.
+* Insert an extra loop (inside the loop which modifies *r*) to print the values 
+  stored in the array to the file. 
+* Make sure your file is closed properly, i.e. if your file-handle is called ``out`` then
+  do not forget the line ``out.close()``
