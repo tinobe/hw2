@@ -39,7 +39,7 @@ you stuffed into ``out`` using the ``<<`` operator.
 ### Your assignment is:
 
 Modify the program ***logmap.cxx*** (which is the solution to the problem to Lab 2) in the following way:
-* Add a function which calculates the values
+* Instead of iterating and printing the results at the same time, modify your code such that first the iteration is done and then the output into 
   *x_1*, ..., *x_n* for a given value of *r*.
   As input parameters, the function should be given
 	an array into which the values are stored, the length
