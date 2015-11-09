@@ -2,8 +2,13 @@ language: cpp
 
 sudo: false
 
+addons:
+  apt:
+    packages:
+    - valgrind
+
 script:
   - make
 
 after_success:
-  - ./logmap > d
+  - valgrind --tool=memcheck ./logmap > d
